@@ -1,0 +1,571 @@
+:root {
+  --wq-green: #1f6f4a;
+  --wq-green-dark-solid: #16523a;
+  --wq-green-accent: #22c58b;
+  --wq-blue-link: #2563a6;
+  --wq-red: #d9534f;
+  --wq-red-dark: #b7413d;
+  --wq-gray-bg: #f4f5f7;
+  --wq-gray-border: #dfe3e6;
+  --wq-gray-text: #55636b;
+  --wq-white: #ffffff;
+}
+
+/* ===================================================== */
+/* CONTENEDOR PRINCIPAL */
+/* ===================================================== */
+
+.lu-container {
+  padding: 24px;
+  background: var(--wq-gray-bg);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ===================================================== */
+/* TARJETA */
+/* ===================================================== */
+
+.lu-card {
+  background: var(--wq-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* ===================================================== */
+/* ENCABEZADO */
+/* ===================================================== */
+
+.lu-card__header {
+  background: var(--wq-green-dark-solid);
+  color: var(--wq-white);
+  padding: 14px 20px;
+}
+
+.lu-card__header h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ===================================================== */
+/* CUERPO */
+/* ===================================================== */
+
+.lu-card__body {
+  padding: 20px;
+}
+
+/* ===================================================== */
+/* BOTONES */
+/* ===================================================== */
+
+.lu-btn {
+  background: var(--wq-green-accent);
+  color: var(--wq-white);
+  border: none;
+  border-radius: 4px;
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.lu-btn:hover {
+  background: var(--wq-green);
+}
+
+.lu-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Botón Nuevo Usuario */
+
+.lu-btn--nuevo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 0;
+}
+
+/* Variante compacta (usada por Nuevo Usuario en su fila propia) */
+
+.lu-btn--sm {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+/* Botón Exportar */
+
+.lu-btn--outline {
+  background: var(--wq-white);
+  color: var(--wq-green-dark-solid);
+  border: 1px solid var(--wq-gray-border);
+}
+
+.lu-btn--outline:hover {
+  background: var(--wq-gray-bg);
+}
+
+/* Botón Ghost */
+
+.lu-btn--ghost {
+  background: transparent;
+  color: var(--wq-gray-text);
+  border: 1px solid var(--wq-gray-border);
+}
+
+.lu-btn--ghost:hover {
+  background: var(--wq-gray-bg);
+}
+
+/* Botón Eliminar */
+
+.lu-btn--danger {
+  background: var(--wq-red);
+}
+
+.lu-btn--danger:hover {
+  background: var(--wq-red-dark);
+}
+
+/* ===================================================== */
+/* TOOLBAR */
+/* ===================================================== */
+
+/* Fila 1: Nuevo Usuario, alineado a la derecha */
+
+.lu-toolbar-nuevo {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+/* Fila 2: Buscar (izquierda) + Exportar Excel (derecha) */
+
+.lu-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+/* Fila 3: Mostrar filas, debajo de Buscar */
+
+.lu-toolbar-mostrar {
+  display: flex;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+/* ===================================================== */
+/* SELECTOR DE FILAS */
+/* ===================================================== */
+
+.lu-select-inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--wq-gray-text);
+  white-space: nowrap;
+}
+
+.lu-select-inline select {
+  padding: 6px 8px;
+  border: 1px solid var(--wq-gray-border);
+  border-radius: 4px;
+  background: var(--wq-white);
+  color: #333;
+  cursor: pointer;
+}
+
+/* ===================================================== */
+/* BUSCADOR */
+/* ===================================================== */
+
+.lu-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--wq-gray-text);
+  white-space: nowrap;
+}
+
+.lu-search input {
+  padding: 7px 10px;
+  border: 1px solid var(--wq-gray-border);
+  border-radius: 4px;
+  min-width: 200px;
+  background: var(--wq-white);
+  color: #333;
+  outline: none;
+}
+
+.lu-search input:focus {
+  border-color: var(--wq-green);
+  box-shadow: 0 0 0 2px rgba(34, 197, 139, 0.15);
+}
+
+/* ===================================================== */
+/* TABLA */
+/* ===================================================== */
+
+.lu-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--wq-gray-border);
+  border-radius: 6px;
+}
+
+.lu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.lu-table thead th {
+  text-align: left;
+  padding: 12px 14px;
+  background: var(--wq-gray-bg);
+  color: var(--wq-green-dark-solid);
+  font-weight: 600;
+  border-bottom: 1px solid var(--wq-gray-border);
+  white-space: nowrap;
+}
+
+.lu-table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--wq-gray-border);
+  color: #333;
+}
+
+.lu-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.lu-cell--link {
+  color: var(--wq-blue-link);
+}
+
+.lu-empty {
+  text-align: center;
+  color: var(--wq-gray-text);
+  padding: 24px !important;
+}
+
+/* ===================================================== */
+/* AVATAR */
+/* ===================================================== */
+
+.lu-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--wq-gray-border);
+  overflow: hidden;
+}
+
+.lu-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===================================================== */
+/* BADGE DE ESTADO */
+/* ===================================================== */
+
+.lu-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--wq-white);
+}
+
+.lu-badge--activo {
+  background: var(--wq-green-accent);
+}
+
+.lu-badge--inactivo {
+  background: var(--wq-red);
+}
+
+/* ===================================================== */
+/* ACCIONES */
+/* ===================================================== */
+
+.lu-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.lu-icon-btn {
+  border: none;
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--wq-white);
+}
+
+.lu-icon-btn--edit {
+  background: var(--wq-green);
+}
+
+.lu-icon-btn--edit:hover {
+  background: var(--wq-green-dark-solid);
+}
+
+.lu-icon-btn--delete {
+  background: var(--wq-red);
+}
+
+.lu-icon-btn--delete:hover {
+  background: var(--wq-red-dark);
+}
+
+/* ===================================================== */
+/* PAGINACIÓN */
+/* ===================================================== */
+
+.lu-pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--wq-gray-text);
+}
+
+.lu-pagination__info {
+  text-align: center;
+}
+
+.lu-pagination__btns {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ===================================================== */
+/* MODALES */
+/* ===================================================== */
+
+.lu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.lu-modal {
+  background: var(--wq-white);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.lu-modal--sm {
+  max-width: 380px;
+}
+
+.lu-modal__header {
+  background: var(--wq-green-dark-solid);
+  color: var(--wq-white);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lu-modal__header h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.lu-modal__close {
+  background: transparent;
+  border: none;
+  color: var(--wq-white);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.lu-modal__body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ===================================================== */
+/* CAMPOS DEL FORMULARIO */
+/* ===================================================== */
+
+.lu-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--wq-green-dark-solid);
+  font-weight: 600;
+}
+
+.lu-field input,
+.lu-field select {
+  font-weight: 400;
+  font-size: 14px;
+  padding: 8px 10px;
+  border: 1px solid var(--wq-gray-border);
+  border-radius: 4px;
+  color: #333;
+}
+
+.lu-field input:focus,
+.lu-field select:focus {
+  border-color: var(--wq-green);
+  outline: 2px solid var(--wq-green-accent);
+  outline-offset: 0;
+}
+
+/* ===================================================== */
+/* ACCIONES DEL MODAL */
+/* ===================================================== */
+
+.lu-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* ===================================================== */
+/* VALIDACIÓN */
+/* ===================================================== */
+
+.lu-input--error {
+  border-color: var(--wq-red) !important;
+}
+
+.lu-error-text {
+  color: var(--wq-red);
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.lu-form-error-banner {
+  background: #fdecea;
+  border: 1px solid var(--wq-red);
+  color: var(--wq-red-dark);
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* ===================================================== */
+/* FOTO DE PERFIL */
+/* ===================================================== */
+
+.lu-foto-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.lu-foto-field__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--wq-green-dark-solid);
+}
+
+.lu-foto-opciones {
+  display: flex;
+  gap: 14px;
+}
+
+.lu-foto-opcion {
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  padding: 3px;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.lu-foto-opcion:hover {
+  border-color: var(--wq-gray-border);
+}
+
+.lu-foto-opcion--seleccionada {
+  border-color: var(--wq-green-accent);
+}
+
+.lu-avatar--lg {
+  width: 64px;
+  height: 64px;
+}
+
+.lu-badge--static {
+  align-self: flex-start;
+}
+
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
+
+@media (max-width: 850px) {
+
+  .lu-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .lu-toolbar .lu-btn {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .lu-search {
+    width: 100%;
+  }
+
+  .lu-search input {
+    min-width: 0;
+    width: 100%;
+    flex: 1;
+  }
+
+  .lu-select-inline {
+    width: 100%;
+  }
+
+  .lu-toolbar-nuevo .lu-btn,
+  .lu-toolbar-mostrar .lu-select-inline select {
+    flex: none;
+  }
+}
